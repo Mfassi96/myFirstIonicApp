@@ -1,6 +1,7 @@
-/* eslint-disable @typescript-eslint/type-annotation-spacing */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { Route } from '@angular/router';
 import { PlacesService } from './places.service';
+import { Inject } from '@angular/core';
 
 @Component({
   selector: 'app-places',
@@ -11,7 +12,7 @@ export class PlacesPage implements OnInit {
 
   places=[];
 
-  constructor(private placesService: PlacesService) {
+  constructor(private placesService: PlacesService, @Inject(String) private router: Route) {
   }
 
   ngOnInit() {
@@ -20,6 +21,11 @@ export class PlacesPage implements OnInit {
 
   ionViewWillEnter(){
     this.places=this.placesService.getPlaces();
+  }
+
+
+  addNewPlace(){
+    //logica para el boton add place
   }
 
 }

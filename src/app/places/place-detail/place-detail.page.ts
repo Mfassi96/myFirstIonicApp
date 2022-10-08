@@ -46,6 +46,8 @@ export class PlaceDetailPage implements OnInit {
       ]
     });
 
+   await alertElement.present();
+
 
   }
 
