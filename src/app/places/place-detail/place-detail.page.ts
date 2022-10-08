@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Place } from '../place.model';
 import { PlacesService } from '../places.service';
 
@@ -12,7 +12,7 @@ export class PlaceDetailPage implements OnInit {
 
   place: Place;
 
-  constructor(private activatedRoute: ActivatedRoute, private placesService: PlacesService) { }
+  constructor(private activatedRoute: ActivatedRoute, private placesService: PlacesService, private router: Router) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap=>{
@@ -20,6 +20,11 @@ export class PlaceDetailPage implements OnInit {
       this.place=this.placesService.getPlace(recipeId);
       console.log(this.place);
     });
+  }
+
+  deletePlace(){
+    this.placesService.deletePlace(this.place.id);
+    this.router.navigate(['/places']);
   }
 
 }
