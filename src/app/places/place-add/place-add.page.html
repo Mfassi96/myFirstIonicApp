@@ -13,9 +13,9 @@
     <ion-col>
       <ion-card>
         <ion-card-content>
-          <ion-input type="text" placeholder="Write a title"></ion-input>
-          <ion-input type="text" placeholder="http://imgeUrl"></ion-input>
-          <ion-button color="primary" (click)="saveNewPlace()">Add Place</ion-button>
+          <ion-input type="text" placeholder="Write a title" #title></ion-input>
+          <ion-input type="text" placeholder="http://imgeUrl" #imageURL></ion-input>
+          <ion-button color="primary" (click)="saveNewPlace(title, imageURL)">Add Place</ion-button>
         </ion-card-content>
       </ion-card>
     </ion-col>

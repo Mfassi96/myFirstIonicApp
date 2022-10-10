@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { PlacesService } from '../places.service';
 
 @Component({
   selector: 'app-place-add',
@@ -7,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaceAddPage implements OnInit {
 
-  constructor() { }
+  constructor(private placesService: PlacesService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  saveNewPlace(){
-    alert('Clicked');
+  saveNewPlace(title, imageURL){
+    //alert('Clicked');
+    this.placesService.addPlace(title.value, imageURL.value);
+    this.router.navigate(['/places']);
   }
 
 }
