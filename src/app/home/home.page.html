@@ -19,5 +19,13 @@
     </ion-toolbar>
   </ion-header>
 
-<ion-text>My first app</ion-text>
+<ion-list>
+  <ion-card *ngFor="let photo of photos">
+    <img [src]="photo.thumbnailUrl" alt="">: <a [href]="photo.url" target="_blank">{{photo.url}}</a>
+    <ion-card-content>
+      <p>{{photo.title}}</p>
+      <p>{{photo.albumId}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-list>
 </ion-content>

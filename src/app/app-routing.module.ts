@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path:'new-place',
     loadChildren: ()=>import('./places/place-add/place-add.module').then(m=>m.PlaceAddPageModule)
+  },
+  {
+    path: 'prueba',
+    loadChildren: () => import('./prueba/prueba.module').then( m => m.PruebaPageModule)
   }
 ];
 
