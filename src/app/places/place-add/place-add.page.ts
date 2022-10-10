@@ -12,4 +12,8 @@ export class PlaceAddPage implements OnInit {
   ngOnInit() {
   }
 
+  saveNewPlace(){
+    alert('Clicked');
+  }
+
 }

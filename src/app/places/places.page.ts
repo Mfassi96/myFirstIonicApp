@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
-import { Route } from '@angular/router';
+import { Router } from '@angular/router';
 import { PlacesService } from './places.service';
-import { Inject } from '@angular/core';
+
 
 @Component({
   selector: 'app-places',
@@ -12,7 +12,7 @@ export class PlacesPage implements OnInit {
 
   places=[];
 
-  constructor(private placesService: PlacesService, @Inject(String) private router: Route) {
+  constructor(private placesService: PlacesService, private router: Router) {
   }
 
   ngOnInit() {
@@ -26,6 +26,7 @@ export class PlacesPage implements OnInit {
 
   addNewPlace(){
     //logica para el boton add place
+    this.router.navigate(['/new-place']);
   }
 
 }
